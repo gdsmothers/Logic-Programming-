@@ -63,4 +63,6 @@ min-above-min([Head | Tail], [H2 | T2], Result) :-
 		min(Rem, Min2),
 		(Min1 =:= Min2 -> remove-min(Removed, Min1, NewList),
 		min-above-min(NewList, [H2 | T2], Result); 
-		Min1> Min2 -> Result = Min1).  
+		Min1> Min2 -> Result = Min1). 
+		
+% 
