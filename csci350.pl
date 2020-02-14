@@ -36,4 +36,8 @@ sum-up-numbers-general([], 0).
 sum-up-numbers-general([Head | Tail], N) :-
 	is_list(Head) - > append([Head | Tail], Head, [Head | NewList]),
 	sum-up-numbers-general(NewList, N);
-	
+	not(number(Head)) ->  sum-up-numbers-general(Tail, N);
+    sum-up-numbers-general(Tail, N1), 
+    N is Head + N1. 
+    
+
