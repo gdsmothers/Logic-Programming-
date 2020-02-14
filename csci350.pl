@@ -47,4 +47,7 @@ min-above-min([Head | Tail], [], Result) :-
 	(number(Head) -> remove([Head | Tail], [], Removed),  
 	min(Removed, Result));
 	(length(Tail, 0) -> Result is Head;
-	min([Head | Tail], Result)).
+	min([Head | Tail], Result)). 
+min-above-min([Head | Tail], [H2 | T2], Result) :-
+	(remove([Head | Tail], [], Removed),
+	length(Removed, 0) -> Removed = false);  
