@@ -51,3 +51,9 @@ min-above-min([Head | Tail], [], Result) :-
 min-above-min([Head | Tail], [H2 | T2], Result) :-
 	(remove([Head | Tail], [], Removed),
 	length(Removed, 0) -> Removed = false);  
+	remove([Head | Tail], [], Removed),
+	length(Removed, 1) ->  remove([H2 | T2], [], Rem),
+		min(Removed, Min1), 
+		min(Rem, Min2), 
+		(Min1 =:= Min2 -> Result = false;
+		
