@@ -10,4 +10,10 @@ remove([], List, List).
 remove([Head | Tail], L2, Return) :-
 	not(number(Head)) -> remove(Tail, L2, Return);
 	number(Head) -> remove(Tail, [Head | L2], Return). 
+	
+%Remove Minimum Function 
+remove-min([Head | Tail], Min, NewList)
+	Head =:= Min -> NewList = Tail;
+	append(Tail, [Head], New), 
+	remove-min(New, Min, NewList).
 
