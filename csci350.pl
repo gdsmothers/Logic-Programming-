@@ -21,6 +21,6 @@ remove-min([Head | Tail], Min, NewList)
 min([Head | Tail], Minimum) :- 
 	min(Tail, Head, Minimum). 
 min([], Minimum, Minimum). 
-min([H | T], Minimum, Mini) :-
-	(H < Minimum -> min 
+min([Head | Tail, Minimum, Mini) :-
+	(Head < Minimum -> min(Tail, Head, Mini); min(Tail, Minimum, Mini)).
 
