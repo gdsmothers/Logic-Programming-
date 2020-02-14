@@ -22,5 +22,10 @@ min([Head | Tail], Minimum) :-
 	min(Tail, Head, Minimum). 
 min([], Minimum, Minimum). 
 min([Head | Tail, Minimum, Mini) :-
-	(Head < Minimum -> min(Tail, Head, Mini); min(Tail, Minimum, Mini)).
-
+	(Head < Minimum -> min(Tail, Head, Mini); min(Tail, Minimum, Mini)). 
+	
+%1. Summing of Numbers in List Excuding Nested Lists 
+sum-up-numbers-simple([], 0).
+sum-up-numbers-simple([Head | Tail], N) :-
+	not(number(Head)) -> sum-up-numbers-simple(Tail, N);
+	
