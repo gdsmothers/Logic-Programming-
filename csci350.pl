@@ -30,4 +30,10 @@ sum-up-numbers-simple([Head | Tail], N) :-
 	not(number(Head)) -> sum-up-numbers-simple(Tail, N);
 	sum-up-numbers-simple(Tail, N1),
 	N is Head + N1.
-
+	
+%2. Summing of Numbers in List Including Nested Lists
+sum-up-numbers-general([], 0).
+sum-up-numbers-general([Head | Tail], N) :-
+	is_list(Head) - > append([Head | Tail], Head, [Head | NewList]),
+	sum-up-numbers-general(NewList, N);
+	
