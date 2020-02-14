@@ -28,4 +28,6 @@ min([Head | Tail, Minimum, Mini) :-
 sum-up-numbers-simple([], 0).
 sum-up-numbers-simple([Head | Tail], N) :-
 	not(number(Head)) -> sum-up-numbers-simple(Tail, N);
-	
+	sum-up-numbers-simple(Tail, N1),
+	N is Head + N1.
+
