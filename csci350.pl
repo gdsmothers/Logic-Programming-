@@ -65,4 +65,7 @@ min-above-min([Head | Tail], [H2 | T2], Result) :-
 		min-above-min(NewList, [H2 | T2], Result); 
 		Min1> Min2 -> Result = Min1). 
 		
-% 
+%Returning the common elements in two lists 
+common-unique-elements([], [], []).
+common-unique-elements([], L2, []). 
+common-unique-elements(L2, [], []).  
