@@ -60,4 +60,7 @@ min-above-min([Head | Tail], [H2 | T2], Result) :-
 	remove([Head | Tail], [], Removed), 
 	not(length(Removed, 1)) -> remove([H2 | T2], [], Rem), 
 		min(Removed, Min1), 
-		 
+		min(Rem, Min2),
+		(Min1 =:= Min2 -> remove-min(Removed, Min1, NewList),
+		min-above-min(NewList, [H2 | T2], Result); 
+		Min1> Min2 -> Result = Min1).  
