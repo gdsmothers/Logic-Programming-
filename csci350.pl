@@ -44,4 +44,7 @@ sum-up-numbers-general([Head | Tail], N) :-
 min-above-min([], L2, false). 
 min-above-min([Head | Tail], [], Result) :-
 	not(number(Head)) -> min-above-min(Tail, [], Result);
-	(number(Head) -> remove([Head | Tail], [], Removed),
+	(number(Head) -> remove([Head | Tail], [], Removed),  
+	min(Removed, Result));
+	(length(Tail, 0) -> Result is Head;
+	min([Head | Tail], Result)).
