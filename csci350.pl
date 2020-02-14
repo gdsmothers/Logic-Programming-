@@ -69,6 +69,8 @@ min-above-min([Head | Tail], [H2 | T2], Result) :-
 common-unique-elements([], [], []).
 common-unique-elements([], L2, []). 
 common-unique-elements(L2, [], []). 
-common-unique-elements([Head | Tail], L2, N) :-
+common-unique-elements([Head | Tail], L2, NewList) :-
         member(Head, L2),
         !,
+         NewList = [Head | N1tail],
+        common-unique-elements(Tail, L2, N1tail).
