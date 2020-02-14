@@ -15,5 +15,12 @@ remove([Head | Tail], L2, Return) :-
 remove-min([Head | Tail], Min, NewList)
 	Head =:= Min -> NewList = Tail;
 	append(Tail, [Head], New), 
-	remove-min(New, Min, NewList).
+	remove-min(New, Min, NewList). 
+	
+%Minimum Function 
+min([Head | Tail], Minimum) :- 
+	min(Tail, Head, Minimum). 
+min([], Minimum, Minimum). 
+min([H | T], Minimum, Mini) :-
+	(H < Minimum -> min 
 
