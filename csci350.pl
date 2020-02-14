@@ -40,4 +40,8 @@ sum-up-numbers-general([Head | Tail], N) :-
     sum-up-numbers-general(Tail, N1), 
     N is Head + N1. 
     
-
+%3. Minimum Above Minimum Function that compares to see if the min in list1 is greater than the min in list2 
+min-above-min([], L2, false). 
+min-above-min([Head | Tail], [], Result) :-
+	not(number(Head)) -> min-above-min(Tail, [], Result);
+	(number(Head) -> remove([Head | Tail], [], Removed),
