@@ -74,3 +74,5 @@ common-unique-elements([Head | Tail], L2, NewList) :-
         !,
          NewList = [Head | N1tail],
         common-unique-elements(Tail, L2, N1tail).
+common-unique-elements([_| Tail], L2, NewList) :-
+        common-unique-elements(Tail, L2, NewList). 
